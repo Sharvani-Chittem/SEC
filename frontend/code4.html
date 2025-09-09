@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&quot; rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ef2d47;
+            --accent: #00ff80;
+            --bg: #fbf4fb;
+            --card-bg: #fff;
+            --text: #222222;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        nav {
+            margin-top: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .about-img {
+            flex: 1 1 180px;
+            max-width: 180px;
+            margin-right: 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(45,137,239,0.15);
+        }
+        .about-img img {
+            width: 100%;
+            display: block;
+        }
+        .about-text {
+            flex: 2 1 300px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .skill-card {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            padding: 1rem 2rem;
+            min-width: 120px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary);
+            transition: transform 0.2s;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: var(--accent);
+            color: #fff;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .project-card {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(45,137,239,0.15);
+        }
+        .project-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: #eee;
+        }
+        .project-content {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .project-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 0 0 0.5rem 0;
+        }
+        .project-desc {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+        .project-link {
+            align-self: flex-end;
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+        .project-link:hover {
+            color: var(--primary);
+        }
+        footer {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 700px) {
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-img {
+                margin: 0 0 1rem 0;
+            }
+            .skills {
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jane Doe</h1>
+        <p>Full Stack Developer & UI Enthusiast</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="about" class="about">
+            <div class="about-img">
+                <img src="data:image/jpeg;base64,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" alt="Jane Doe">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    Hi! I'm Jane, a passionate developer crafting modern web experiences. I love building scalable apps, designing beautiful interfaces, and solving real-world problems with code. Let's create something amazing together!
+                </p>
+            </div>
+        </section>
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills">
+                <div class="skill-card">HTML5</div>
+                <div class="skill-card">CSS3</div>
+                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">React</div>
+                <div class="skill-card">Node.js</div>
+                <div class="skill-card">MongoDB</div>
+                <div class="skill-card">Git & GitHub</div>
+                <div class="skill-card">UI/UX Design</div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <img class="project-img" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80&quot; alt="Project 1">
+                    <div class="project-content">
+                        <div>
+                            <div class="project-title">Portfolio Website</div>
+                            <div class="project-desc">A personal portfolio site built with React and styled-components, featuring responsive design and smooth animations.</div>
+                        </div>
+                        <a class="project-link" href="#" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80&quot; alt="Project 2">
+                    <div class="project-content">
+                        <div>
+                            <div class="project-title">Task Manager App</div>
+                            <div class="project-desc">A full-stack MERN app for managing tasks, with authentication, real-time updates, and a clean UI.</div>
+                        </div>
+                        <a class="project-link" href="#" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80&quot; alt="Project 3">
+                    <div class="project-content">
+                        <div>
+                            <div class="project-title">Weather Dashboard</div>
+                            <div class="project-desc">A responsive dashboard that fetches live weather data using APIs, with charts and location search.</div>
+                        </div>
+                        <a class="project-link" href="#" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <form style="background:var(--card-bg);box-shadow:var(--shadow);border-radius:8px;padding:2rem;max-width:500px;margin:0 auto;">
+                <div style="margin-bottom:1rem;">
+                    <input type="text" placeholder="Your Name" required style="width:100%;padding:0.7rem;border-radius:4px;border:1px solid #ddd;">
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <input type="email" placeholder="Your Email" required style="width:100%;padding:0.7rem;border-radius:4px;border:1px solid #ddd;">
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <textarea placeholder="Your Message" required style="width:100%;padding:0.7rem;border-radius:4px;border:1px solid #ddd;min-height:80px;"></textarea>
+                </div>
+                <button type="submit" style="background:var(--primary);color:#fff;padding:0.7rem 2rem;border:none;border-radius:4px;font-weight:700;cursor:pointer;transition:background 0.2s;">Send</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        &copy; 2024 Jane Doe. All rights reserved.
+    </footer>
+</body>
+</html></div>
